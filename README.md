@@ -26,7 +26,7 @@ Get the latest build from the [Releases page](../../releases).
    more characters. Nothing is registered anywhere.
 2. **Give both to your friends.** Everyone types exactly the same name and
    password into their own GrimmLink.
-3. **Press the cat.** It turns from grey to colour when you are connected,
+3. **Press the cat.** It turns from grey to green (or orange in Dark Mode) when you are connected,
    and the others appear in the list.
 4. **Play.** A game hosted by anyone in the list should appear in the game's
    own LAN list. If it does not, tap the host's 100. address to copy it and
