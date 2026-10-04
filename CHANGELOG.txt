@@ -1,0 +1,95 @@
+v0.55
+- Tutorial: opens when GrimmLink starts, with a "Don't show again" box, and is in Options at any time.
+- Android: built for Android 16 (API 36), as Google Play now requires. The page keeps clear of the status and navigation bars, and the app asks to show its "connected" notification.
+- Android: built with tools from Google's own Android SDK. A bundle for Google Play is built alongside the APK.
+
+v0.54
+- New box beside the Connect button on a computer: "Open a router port (UPnP)". Ticked, GrimmLink asks your router to let other devices connect straight to this PC, like port forwarding set up by hand, and closes the port again on disconnect. Off unless ticked. It can be switched while connected.
+- Why: a phone on mobile data could not join at all. It can now connect to a PC with an open port and reach everyone else through it.
+- The line under the box says how the router took it: asking, port open, no answer, refused, or open but not reachable from outside.
+- While the port is open, Windows Firewall lets that one port through to GrimmLink.
+- Network check: new line "Router port opening (UPnP)", saying whether this router will do it.
+- A device keeps the same port each time it runs, so the others find it again where they last had it.
+- Dark mode: what shows how a connection is doing is green again (the cat's plate, a directly connected device, a good check result). Amber means going through another device or still trying. Buttons and ticks stay orange.
+- Fixed in the light look: problem messages had no red background, dialogs did not dim the window behind them, and addresses did not highlight under the mouse.
+- SuperTuxKart's LAN list (v0.53) is confirmed working between two phones on different networks.
+
+v0.53
+- Games in LAN lists: SuperTuxKart's search for LAN servers now gets through. It asks at addresses like 100.90.15.255 instead of the usual 255.255.255.255, and GrimmLink used to drop those. Any address in GrimmLink's range that ends in .255 now reaches every device.
+- Not yet tried with the game itself.
+
+v0.52
+- Devices introduce each other: a device connected to two others tells each about the other. Two devices that both see a third no longer have to find each other on their own.
+- With no direct connection between two devices, a device connected to both passes their traffic along, still encrypted between the two. The list shows "through NAME" for a device reached this way.
+- A found address is greeted for two minutes instead of 16 seconds, so devices that learn of each other at different moments stop missing each other.
+- Devices tell each other their public address, and also try a home's public address with a device's own port.
+- Log: who introduced a device, and, after half a minute without a direct connection, which addresses are being tried.
+- Every device needs v0.52 for the first two. Older versions still connect as before.
+
+v0.51
+- Android: games in LAN lists. While connected, the phone's own search for games goes through GrimmLink, so a world hosted on another device should appear in the phone's list by itself. "Show games in LAN lists" is back in the phone's Options to turn this off.
+- New option "Game port": with it set, tapping an address copies it with the port (for example 100.92.196.164:19132), ready to paste into a game.
+- Fixed: tapping your own address, beside the cat, did not copy it.
+- Android: the first build was confirmed on a phone: it starts, and connects to a PC.
+
+v0.5
+- First Android app: GrimmLink.apk, for 64-bit ARM phones on Android 8 or newer. The same window, saved networks, Options, network check and changelog as on a computer.
+- Android: the tunnel uses Android's own VPN feature, so the phone asks once for permission. Only GrimmLink's 100.x addresses go through it; everything else on the phone is untouched.
+- Android: stays connected after leaving the app, with a notification that has a Disconnect button.
+- Android: Options leaves out the three settings that only apply to a computer (tray, games in LAN lists, firewall).
+
+v0.4
+- The network check is now in the window: Options > Network check. It says whether this network allows direct connections, whether devices can be found over the internet, and whether it has IPv6, with a button to copy the result for sending.
+- The check's result is also written to the log.
+- GrimmLink-check.exe is still included, for checking a network without starting GrimmLink.
+
+v0.3
+- New option "Keep running in the tray": with it ticked, the X button hides GrimmLink in the system tray and it stays connected. Unticked, X quits as before.
+- Tray icon while GrimmLink runs: click it to open the window, right-click for Open and Quit.
+- Starting GrimmLink while it is hidden in the tray opens its window.
+- New option "Dark mode": dark window with orange in place of green.
+- This changelog, opened from the button beside the version in Options.
+
+v0.2
+- Renamed from lanlink to GrimmLink: programs, window, network adapter, firewall rule, log, settings and the Ubuntu service. Devices still on a lanlink build connect as before.
+- Version numbers start here. Every program reports its version.
+- Fixed: a second window opened a few seconds after starting.
+- Fixed: closing the window could leave the program running unseen and holding the network adapter.
+- Only one copy runs. Starting it again brings the existing window forward.
+- The "adapter already exists" error now names the other running copy. An adapter left behind by a crash is replaced automatically.
+- A lanlink-device.json in the folder is picked up automatically, so the PC keeps its addresses and saved networks.
+- Ubuntu: the installer upgrades over a lanlink installation and keeps its settings and address. The network interface is now grimmlink0.
+
+Before v0.2: the window
+- First version with a window: the cat Connect button, this device's name and address, the list of devices with how each is reached, and a status line.
+- Saved networks: add, change, remove and pick from a list. A password is typed once and never stored; keys worked out from it are.
+- Options: games in LAN lists, firewall, searching over the internet, matchmaker address, copy log, quit.
+- The program asks for administrator rights itself. The window runs without them.
+- Click any address to copy it.
+- Artwork can be replaced from a "ui" folder beside the program. The program has an icon.
+- The text version uses the same saved networks and device file.
+
+Before v0.2: games in LAN lists
+- A game hosted on one device appears in the LAN list on the others, by carrying "is anyone there?" announcements to every member.
+- Windows: the adapter is given priority so games announce on it, and Windows Firewall is opened to members only, until disconnect.
+
+Before v0.2: no server needed
+- Devices find each other with no server of ours: by broadcast on the same local network, and through the public BitTorrent network across the internet. The matchmaker became optional.
+- Members introduce themselves to each other directly, sealed with the network password.
+- Wrong addresses handed back by the public network are retried less and less often, and no longer fill the log.
+
+Before v0.2: checking a network
+- New check program: says whether a network allows direct connections (open, friendly, hostile or blocked) and whether the public network can be reached.
+- IPv6 alongside IPv4.
+- The matchmaker runs on Windows too and prints the addresses to give out.
+- Fixed: a device could offer its own in-network address as a route, which looped.
+- A matchmaker address that is inside the network (100.x) is refused with an explanation.
+
+Before v0.2: Windows and Ubuntu
+- Windows program with its own network adapter. Started by double-click, it asks for what it needs.
+- Ubuntu package: installer and background service.
+
+Before v0.2: the beginning
+- Join by network name and password. No accounts: each device has its own key, and its 100.x address comes from that key.
+- Direct connections through ordinary home routers, a relay through the matchmaker where direct is impossible, and recovery when a network changes.
+- Everything between devices encrypted end to end with WireGuard.

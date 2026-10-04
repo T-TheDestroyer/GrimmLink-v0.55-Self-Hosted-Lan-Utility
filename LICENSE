@@ -1,0 +1,34 @@
+GrimmLink Licence
+
+Copyright (c) 2026 Grimm Creations. All rights reserved.
+
+1. Use. You may download, install and use GrimmLink free of charge, for
+   personal or commercial purposes, on any number of devices.
+
+2. Sharing. You may pass on exact, unmodified copies of the official
+   release files, free of charge, as long as this licence is included.
+
+3. Restrictions. You may not:
+   a. modify GrimmLink or create works derived from it;
+   b. distribute modified versions, or builds made from changed source;
+   c. sell, rent or charge for GrimmLink or for access to it;
+   d. remove or change this licence or any copyright notice.
+
+4. Source code. Where source code is published, it is published so that it
+   can be read and checked. Publishing it does not grant permission to
+   modify or reuse it, beyond what this licence allows.
+
+5. Third-party components. GrimmLink includes software written by others
+   (including wireguard-go, the Go extended libraries and the Wintun
+   driver). Those components remain under their own licences, which are
+   in the "licenses" folder and in the release files. Nothing here limits
+   the rights those licences give you over those components.
+
+6. No warranty. GrimmLink is provided "as is", without warranty of any
+   kind, express or implied. To the fullest extent the law allows, the
+   author is not liable for any damage or loss arising from its use.
+
+7. Ending. This licence ends automatically if you break its terms. You
+   must then stop using and distributing GrimmLink.
+
+For permission to do anything not allowed here, contact the author.
