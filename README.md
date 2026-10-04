@@ -30,7 +30,9 @@ Get the latest build from the [Releases page](../../releases).
    and the others appear in the list.
 4. **Play.** A game hosted by anyone in the list should appear in the game's
    own LAN list. If it does not, tap the host's 100. address to copy it and
-   paste it into the game.
+   paste it into the game. Support for games may vary as each game treats LAN connections differently
+   but I have tested Minecraft Java and Bedrock Editions on PC and Android, SuperTuxKart on Android,
+   and Rainbow 6 Siege on PC/Steam. Contact me if a specific game is having trouble and I'll do my best.
 
 ## What it does
 
